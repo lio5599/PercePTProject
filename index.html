@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PercePT - Project Showcase</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 1rem;
+            border-bottom: 1px solid #ccc;
+        }
+
+        h2 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .media-card video, .media-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .media-card p {
+            font-size: 0.9rem;
+            text-align: center;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            overflow-x: auto;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>PercePT</h1>
+        <p>Physical Therapy Movement Tracking via Computer Vision</p>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h2>Project Overview</h2>
+            <p>
+                PercePT is a computer vision application designed to track and analyze physical therapy movements. 
+                Utilizing <strong>MediaPipe</strong> and <strong>OpenCV</strong>, the system monitors specific exercises
+                (such as squats and bicep curls) in real-time. It implements a Finite State Machine (FSM) logic to count
+                repetitions and evaluate form, while utilizing a One Euro Filter to smooth the signal data and reduce jitter.
+            </p>
+            <p>
+                The codebase can be found at this <a href="https://github.com/lio5599/PercePT" target="_blank">link</a>.
+                You can read the full documentation in the <a href="COMS5750FinalProjectReport.pdf" target="_blank">Project Report</a>.
+            </p>
+        </section>
+
+        <section>
+            <h2>Video Demonstrations</h2>
+            <div class="media-grid">
+                <div class="media-card">
+                    <video controls>
+                        <source src="video/squat.mp4" type="video/mp4">
+                    </video>
+                    <p>Squat</p>
+                </div>
+                <div class="media-card">
+                    <video controls>
+                        <source src="video/bicepCurl.mp4" type="video/mp4">
+                    </video>
+                    <p>Bicep Curl</p>
+                </div>
+                <div class="media-card">
+                    <video controls>
+                        <source src="video/lateralRaise.mp4" type="video/mp4">
+                    </video>
+                    <p>Lateral Raise</p>
+                </div>
+                <div class="media-card">
+                    <video controls>
+                        <source src="video/frontLunge.mp4" type="video/mp4">
+                    </video>
+                    <p>Front Lunge</p>
+                </div>
+                <div class="media-card">
+                    <video controls>
+                        <source src="video/kneeBend.mp4" type="video/mp4">
+                    </video>
+                    <p>Knee Bend</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>System Screenshots</h2>
+            <div class="media-grid">
+                <div class="media-card">
+                    <img src="images/idleImage.jpg" alt="FSM Logic output">
+                    <p>Idle State of the squat exercise.</p>
+                </div>
+                <div class="media-card">
+                    <img src="images/flexingImage.jpg" alt="Signal Smoothing Graph">
+                    <p>Flexing State of the squat exercise.</p>
+                </div>
+                <div class="media-card">
+                    <img src="images/targetImage.jpg" alt="Signal Smoothing Graph">
+                    <p>Target State of the squat exercise.</p>
+                </div>
+                <div class="media-card">
+                    <img src="images/straighteningImage.jpg" alt="Signal Smoothing Graph">
+                    <p>Straightening State of the squat exercise.</p>
+                </div>
+                <div class="media-card">
+                    <img src="images/flexBicep.jpg" alt="Signal Smoothing Graph">
+                    <p>Flexing State of the bicep curl exercise.</p>
+                </div>
+                <div class="media-card">
+                    <img src="images/flexKB.jpg" alt="Signal Smoothing Graph">
+                    <p>Flexing state of the knee bend exercise.</p>
+                </div>
+                <div class="media-card">
+                    <img src="images/flexLR.jpg" alt="Signal Smoothing Graph">
+                    <p>Flexing state of the lateral raise exercise.</p>
+                </div>
+                <div class="media-card">
+                    <img src="images/flexLunge.jpg" alt="Signal Smoothing Graph">
+                    <p>Flexing state of the front lunge exercise.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
